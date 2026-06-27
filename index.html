@@ -42,16 +42,20 @@ nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-betw
 .nav-pill{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#06302b;background:var(--teal);padding:6px 14px;border-radius:20px}
 
 /* HERO */
-#hero{background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-bottom:80px}
-.hero{max-width:820px;margin:0 auto;padding:80px 40px 48px;text-align:center}
-.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:32px;opacity:0.8}
-.hero-tag::before,.hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--teal);opacity:0.4}
-.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(52px,9vw,96px);line-height:0.95;letter-spacing:-0.035em;margin-bottom:28px;color:var(--ink)}
-.hero h1 em{font-style:italic;color:var(--teal)}
-.hero-sub{font-size:17px;color:var(--ink3);max-width:520px;margin:0 auto 48px;line-height:1.65}
-.start-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--teal);color:#06302b;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.02em;border:none;border-radius:50px;cursor:pointer;transition:all 0.2s}
-.start-btn:hover{background:var(--ink);color:var(--teal);transform:translateY(-2px)}
-.start-btn svg{width:16px;height:16px}
+#hero{background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-bottom:80px;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse at center,rgba(79,216,203,0.09) 0%,transparent 70%);pointer-events:none;z-index:0}
+.hero{max-width:860px;margin:0 auto;padding:88px 40px 48px;text-align:center;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:36px;opacity:0.9}
+.hero-tag::before,.hero-tag::after{content:'';display:block;width:36px;height:1px;background:var(--teal);opacity:0.35}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(58px,10vw,112px);line-height:0.92;letter-spacing:-0.04em;margin-bottom:36px;color:var(--ink)}
+.hero h1 em{font-style:italic;color:var(--teal);text-shadow:0 0 60px rgba(79,216,203,0.3)}
+.hero-punches{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;margin:0 auto 48px}
+.hero-punch{font-size:14px;font-weight:600;color:var(--ink3);padding:0 14px;position:relative;line-height:1.4}
+.hero-punch:not(:last-child)::after{content:'·';position:absolute;right:-2px;color:var(--teal);opacity:0.45;font-size:20px;line-height:1}
+.hero-punch em{font-style:normal;color:var(--ink);font-weight:700}
+.start-btn{display:inline-flex;align-items:center;gap:10px;padding:17px 40px;background:var(--teal);color:#06302b;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.03em;border:none;border-radius:50px;cursor:pointer;transition:all 0.22s;box-shadow:0 0 32px rgba(79,216,203,0.22)}
+.start-btn:hover{background:var(--ink);color:var(--teal);transform:translateY(-2px);box-shadow:0 0 40px rgba(79,216,203,0.15)}
+.start-btn svg{width:15px;height:15px}
 
 /* AVATAR GRID */
 .avatar-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;max-width:960px;width:100%;padding:0 40px;margin:0 auto}
@@ -189,7 +193,12 @@ footer a:hover{color:var(--teal)}
   <div class="hero">
     <div class="hero-tag">30 questions · free · no signup</div>
     <h1>What type of <em>grinder</em><br/>are you?</h1>
-    <p class="hero-sub">16 types. Brutally accurate. Slightly uncomfortable. Find out which one you actually are.</p>
+    <div class="hero-punches">
+      <span class="hero-punch"><em>16 types.</em></span>
+      <span class="hero-punch">Brutally accurate.</span>
+      <span class="hero-punch">Slightly uncomfortable.</span>
+      <span class="hero-punch">You'll want to tag someone.</span>
+    </div>
     <button class="start-btn" onclick="startQuiz()">Find out <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
   <div class="avatar-grid">
