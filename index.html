@@ -12,24 +12,24 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f4f1e8;
-  --bg2:#ebe7da;
-  --bg3:#ffffff;
-  --ink:#0a0a0a;
-  --ink2:#3a3a3a;
-  --ink3:#6b6b6b;
-  --ink4:#999;
-  --teal:#1d6e62;
-  --teal2:#2a8577;
-  --teal3:#5ba89a;
-  --teal-light:#c8dcd6;
-  --teal-bg:#dee9e5;
+  --bg:#0B1311;
+  --bg2:#0d1a17;
+  --bg3:#0e201b;
+  --ink:#ECE7DA;
+  --ink2:#c8c3b8;
+  --ink3:#9AA6A0;
+  --ink4:#627268;
+  --teal:#4FD8CB;
+  --teal2:#3bbfb3;
+  --teal3:#2aa89c;
+  --teal-light:rgba(79,216,203,0.18);
+  --teal-bg:rgba(79,216,203,0.1);
   --red:#e85a3c;
   --blue:#4a7ccc;
   --purple:#7d6cc4;
   --green:#7ba84c;
-  --border:rgba(10,10,10,0.1);
-  --border2:rgba(10,10,10,0.18);
+  --border:rgba(255,255,255,0.09);
+  --border2:rgba(255,255,255,0.16);
   --radius:8px;
   --radius-lg:14px;
 }
@@ -37,26 +37,33 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(244,241,232,0.95);backdrop-filter:blur(12px);z-index:100}
+nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(11,19,17,0.92);backdrop-filter:blur(12px);z-index:100}
 .logo{font-family:'Instrument Serif',serif;font-size:22px;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
-.nav-pill{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--bg3);background:var(--teal);padding:6px 14px;border-radius:20px}
+.nav-pill{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#06302b;background:var(--teal);padding:6px 14px;border-radius:20px}
 
 /* HERO */
-.hero{max-width:820px;margin:0 auto;padding:100px 40px 60px;text-align:center}
-.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:32px}
-.hero-tag::before,.hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--ink4)}
-.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(56px,10vw,104px);line-height:0.95;letter-spacing:-0.035em;margin-bottom:28px;color:var(--ink)}
+#hero{background:var(--bg);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-bottom:80px}
+.hero{max-width:820px;margin:0 auto;padding:80px 40px 48px;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:32px;opacity:0.8}
+.hero-tag::before,.hero-tag::after{content:'';display:block;width:28px;height:1px;background:var(--teal);opacity:0.4}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(52px,9vw,96px);line-height:0.95;letter-spacing:-0.035em;margin-bottom:28px;color:var(--ink)}
 .hero h1 em{font-style:italic;color:var(--teal)}
 .hero-sub{font-size:17px;color:var(--ink3);max-width:520px;margin:0 auto 48px;line-height:1.65}
-.start-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--ink);color:var(--bg);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.02em;border:none;border-radius:50px;cursor:pointer;transition:all 0.2s}
-.start-btn:hover{background:var(--teal);transform:translateY(-2px)}
+.start-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--teal);color:#06302b;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.02em;border:none;border-radius:50px;cursor:pointer;transition:all 0.2s}
+.start-btn:hover{background:var(--ink);color:var(--teal);transform:translateY(-2px)}
 .start-btn svg{width:16px;height:16px}
 
-/* TYPE STRIP */
-.types-preview{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:760px;margin:60px auto 0;padding:0 40px}
-.type-chip{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.08em;padding:6px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:20px;color:var(--ink3);opacity:0;animation:chipIn 0.4s ease forwards}
-@keyframes chipIn{to{opacity:1}}
-.type-chip:nth-child(1){animation-delay:.1s}.type-chip:nth-child(2){animation-delay:.15s}.type-chip:nth-child(3){animation-delay:.2s}.type-chip:nth-child(4){animation-delay:.25s}.type-chip:nth-child(5){animation-delay:.3s}.type-chip:nth-child(6){animation-delay:.35s}.type-chip:nth-child(7){animation-delay:.4s}.type-chip:nth-child(8){animation-delay:.45s}.type-chip:nth-child(9){animation-delay:.5s}.type-chip:nth-child(10){animation-delay:.55s}.type-chip:nth-child(11){animation-delay:.6s}.type-chip:nth-child(12){animation-delay:.65s}.type-chip:nth-child(13){animation-delay:.7s}.type-chip:nth-child(14){animation-delay:.75s}.type-chip:nth-child(15){animation-delay:.8s}.type-chip:nth-child(16){animation-delay:.85s}
+/* AVATAR GRID */
+.avatar-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;max-width:960px;width:100%;padding:0 40px;margin:0 auto}
+.avatar-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all 0.2s;opacity:0;animation:avatarIn 0.5s ease forwards}
+.avatar-card:hover{border-color:var(--teal);background:var(--bg2);transform:translateY(-3px)}
+.avatar-card svg{width:72px;height:72px;display:block}
+.avatar-code{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--teal);text-transform:uppercase}
+.avatar-name{font-family:'Inter',sans-serif;font-size:9px;font-weight:500;color:var(--ink4);text-align:center;line-height:1.3}
+@keyframes avatarIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.avatar-card:nth-child(1){animation-delay:.05s}.avatar-card:nth-child(2){animation-delay:.08s}.avatar-card:nth-child(3){animation-delay:.11s}.avatar-card:nth-child(4){animation-delay:.14s}.avatar-card:nth-child(5){animation-delay:.17s}.avatar-card:nth-child(6){animation-delay:.20s}.avatar-card:nth-child(7){animation-delay:.23s}.avatar-card:nth-child(8){animation-delay:.26s}.avatar-card:nth-child(9){animation-delay:.29s}.avatar-card:nth-child(10){animation-delay:.32s}.avatar-card:nth-child(11){animation-delay:.35s}.avatar-card:nth-child(12){animation-delay:.38s}.avatar-card:nth-child(13){animation-delay:.41s}.avatar-card:nth-child(14){animation-delay:.44s}.avatar-card:nth-child(15){animation-delay:.47s}.avatar-card:nth-child(16){animation-delay:.50s}
+@media(max-width:760px){.avatar-grid{grid-template-columns:repeat(4,1fr);gap:8px;padding:0 16px}}
+@media(max-width:400px){.avatar-grid{grid-template-columns:repeat(2,1fr)}}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes qSlide{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
@@ -182,11 +189,90 @@ footer a:hover{color:var(--teal)}
   <div class="hero">
     <div class="hero-tag">30 questions · free · no signup</div>
     <h1>What type of <em>grinder</em><br/>are you?</h1>
-    <p class="hero-sub">30 questions to find out which of the 16 grinder types you actually are. Brutally accurate. Slightly uncomfortable. You'll want to tag someone.</p>
+    <p class="hero-sub">16 types. Brutally accurate. Slightly uncomfortable. Find out which one you actually are.</p>
     <button class="start-btn" onclick="startQuiz()">Find out <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
   </div>
-  <div class="types-preview">
-    <span class="type-chip">LOAD-R</span><span class="type-chip">GHOST</span><span class="type-chip">CTRL-Z</span><span class="type-chip">FIRE-D</span><span class="type-chip">GRID-D</span><span class="type-chip">PING-R</span><span class="type-chip">SLEEP</span><span class="type-chip">BURN-T</span><span class="type-chip">VIBE-S</span><span class="type-chip">SOLO-X</span><span class="type-chip">FOMO-R</span><span class="type-chip">DECK-R</span><span class="type-chip">COPY-C</span><span class="type-chip">NICE-R</span><span class="type-chip">DATA-K</span><span class="type-chip">WHER-R</span>
+  <div class="avatar-grid">
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="55" ry="6" fill="#4FD8CB" opacity="0.12"/><rect x="55" y="70" width="60" height="55" rx="4" fill="#c8a16a" stroke="#ECE7DA" stroke-width="2"/><rect x="65" y="55" width="65" height="60" rx="4" fill="#c8a16a" stroke="#ECE7DA" stroke-width="2"/><rect x="80" y="40" width="55" height="45" rx="4" fill="#c8a16a" stroke="#ECE7DA" stroke-width="2"/><path d="M75 65 L90 55 L110 65" stroke="#ECE7DA" stroke-width="2" fill="none"/><circle cx="100" cy="135" r="22" fill="#2a1f12" stroke="#ECE7DA" stroke-width="2"/><circle cx="93" cy="132" r="2" fill="#ECE7DA"/><circle cx="107" cy="132" r="2" fill="#ECE7DA"/><path d="M93 145 Q100 142 107 145" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="65" y="155" width="70" height="25" rx="4" fill="#4FD8CB" stroke="#ECE7DA" stroke-width="2"/><line x1="50" y1="125" x2="35" y2="135" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><line x1="150" y1="125" x2="165" y2="135" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><text x="100" y="170" font-family="Inter" font-size="10" font-weight="700" fill="#06302b" text-anchor="middle">SOS</text></svg>
+      <span class="avatar-code">LOAD-R</span>
+      <span class="avatar-name">The Pack Mule</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7d6cc4" opacity="0.2"/><path d="M60 60 Q60 35 100 35 Q140 35 140 60 L140 150 Q135 155 130 150 Q125 155 120 150 Q115 155 110 150 Q105 155 100 150 Q95 155 90 150 Q85 155 80 150 Q75 155 70 150 Q65 155 60 150 Z" fill="#2a2240" stroke="#ECE7DA" stroke-width="2"/><ellipse cx="85" cy="85" rx="6" ry="8" fill="#ECE7DA"/><ellipse cx="115" cy="85" rx="6" ry="8" fill="#ECE7DA"/><path d="M90 110 Q100 115 110 110" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="135" y="70" width="25" height="20" rx="2" fill="#7d6cc4" stroke="#ECE7DA" stroke-width="1.5"/><path d="M137 75 L147 82 L157 75" stroke="#ECE7DA" stroke-width="1.5" fill="none"/><text x="147" y="105" font-family="Inter" font-size="8" font-weight="600" fill="#7d6cc4" text-anchor="middle">47</text></svg>
+      <span class="avatar-code">GHOST</span>
+      <span class="avatar-name">The Follow-Up Graveyard</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#e85a3c" opacity="0.2"/><circle cx="100" cy="90" r="38" fill="#2a1209" stroke="#ECE7DA" stroke-width="2"/><path d="M62 80 Q70 50 100 50 Q130 50 138 80" stroke="#ECE7DA" stroke-width="2" fill="#3a2010"/><circle cx="88" cy="90" r="3" fill="#ECE7DA"/><circle cx="112" cy="90" r="3" fill="#ECE7DA"/><path d="M82 88 L94 88 M106 88 L118 88" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round"/><path d="M85 108 Q100 100 115 108" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="55" y="130" width="90" height="50" rx="6" fill="#e85a3c" stroke="#ECE7DA" stroke-width="2"/><path d="M75 155 L65 145 L75 135" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M65 145 L130 145" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><path d="M125 135 Q135 145 125 155" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+      <span class="avatar-code">CTRL-Z</span>
+      <span class="avatar-name">The Take-Backer</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#e85a3c" opacity="0.2"/><path d="M100 30 C100 30 75 60 75 95 C75 120 86 140 100 140 C114 140 125 120 125 95 C125 80 120 65 115 55 C113 70 108 75 102 78 C100 60 100 30 100 30 Z" fill="#e85a3c" stroke="#ECE7DA" stroke-width="2" stroke-linejoin="round"/><path d="M88 100 C88 110 93 120 100 120 C107 120 112 110 112 100 C112 92 109 87 106 85 C105 91 102 93 99 94 C98 88 96 80 96 80 S88 88 88 100 Z" fill="#f4d4a8"/><rect x="70" y="140" width="60" height="35" rx="4" fill="#1a1a1a" stroke="#ECE7DA" stroke-width="2"/><text x="100" y="162" font-family="Inter" font-size="11" font-weight="700" fill="#e85a3c" text-anchor="middle">FIRE</text></svg>
+      <span class="avatar-code">FIRE-D</span>
+      <span class="avatar-name">The Arsonist Firefighter</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7ba84c" opacity="0.2"/><circle cx="100" cy="80" r="32" fill="#1a2a10" stroke="#ECE7DA" stroke-width="2"/><path d="M75 65 Q80 45 100 45 Q120 45 125 65" stroke="#ECE7DA" stroke-width="2" fill="#1a2a10"/><rect x="83" y="72" width="14" height="10" rx="2" fill="none" stroke="#ECE7DA" stroke-width="1.5"/><rect x="103" y="72" width="14" height="10" rx="2" fill="none" stroke="#ECE7DA" stroke-width="1.5"/><line x1="97" y1="77" x2="103" y2="77" stroke="#ECE7DA" stroke-width="1.5"/><circle cx="90" cy="77" r="1.5" fill="#ECE7DA"/><circle cx="110" cy="77" r="1.5" fill="#ECE7DA"/><path d="M88 98 L100 102 L112 98" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="55" y="125" width="90" height="55" rx="4" fill="#7ba84c" stroke="#ECE7DA" stroke-width="2"/><rect x="63" y="135" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="87" y="135" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="111" y="135" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="63" y="155" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="87" y="155" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)"/><rect x="111" y="155" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)"/></svg>
+      <span class="avatar-code">GRID-D</span>
+      <span class="avatar-name">The System Architect</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#4a7ccc" opacity="0.2"/><circle cx="100" cy="85" r="35" fill="#0e1e35" stroke="#ECE7DA" stroke-width="2"/><path d="M70 70 Q75 50 100 50 Q125 50 130 70" stroke="#ECE7DA" stroke-width="2" fill="#0e1e35"/><circle cx="88" cy="85" r="3" fill="#ECE7DA"/><circle cx="112" cy="85" r="3" fill="#ECE7DA"/><path d="M85 102 Q100 108 115 102" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="60" y="125" width="80" height="55" rx="4" fill="#4a7ccc" stroke="#ECE7DA" stroke-width="2"/><circle cx="80" cy="145" r="4" fill="#e85a3c"/><text x="89" y="149" font-family="Inter" font-size="9" font-weight="700" fill="#ECE7DA">99+</text><rect x="68" y="158" width="64" height="3" rx="1" fill="#ECE7DA" opacity="0.5"/><rect x="68" y="165" width="50" height="3" rx="1" fill="#ECE7DA" opacity="0.5"/><rect x="68" y="172" width="58" height="3" rx="1" fill="#ECE7DA" opacity="0.5"/></svg>
+      <span class="avatar-code">PING-R</span>
+      <span class="avatar-name">The Always-On Grinder</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7d6cc4" opacity="0.2"/><ellipse cx="100" cy="105" rx="55" ry="35" fill="#1e1530" stroke="#ECE7DA" stroke-width="2"/><path d="M55 95 Q70 75 100 75 Q130 75 145 95" stroke="#ECE7DA" stroke-width="2" fill="#1e1530"/><path d="M82 105 Q85 100 88 105" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M112 105 Q115 100 118 105" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M90 120 Q100 124 110 120" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><text x="155" y="68" font-family="Inter" font-size="14" font-weight="700" fill="#ECE7DA">z</text><text x="167" y="58" font-family="Inter" font-size="11" font-weight="700" fill="#ECE7DA">z</text><text x="175" y="50" font-family="Inter" font-size="9" font-weight="700" fill="#ECE7DA">z</text><rect x="60" y="145" width="80" height="35" rx="4" fill="#7d6cc4" stroke="#ECE7DA" stroke-width="2"/><text x="100" y="167" font-family="Inter" font-size="10" font-weight="700" fill="#ECE7DA" text-anchor="middle">MONDAY</text></svg>
+      <span class="avatar-code">SLEEP</span>
+      <span class="avatar-name">The Eternal Pre-Starter</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#e85a3c" opacity="0.2"/><circle cx="100" cy="90" r="38" fill="#2a1209" stroke="#ECE7DA" stroke-width="2"/><path d="M62 75 Q75 50 100 50 Q125 50 138 75" stroke="#ECE7DA" stroke-width="2" fill="#3a2a1a"/><path d="M70 80 Q80 65 95 78" stroke="#e85a3c" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M105 78 Q120 65 130 80" stroke="#e85a3c" stroke-width="3" fill="none" stroke-linecap="round"/><line x1="80" y1="93" x2="92" y2="93" stroke="#ECE7DA" stroke-width="2.5" stroke-linecap="round"/><line x1="108" y1="93" x2="120" y2="93" stroke="#ECE7DA" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="100" cy="115" rx="8" ry="4" fill="#ECE7DA"/><path d="M75 35 Q80 25 85 35" stroke="#e85a3c" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M115 35 Q120 25 125 35" stroke="#e85a3c" stroke-width="2.5" stroke-linecap="round" fill="none"/><rect x="65" y="135" width="70" height="45" rx="6" fill="#e85a3c" stroke="#ECE7DA" stroke-width="2"/><text x="100" y="163" font-family="Inter" font-size="13" font-weight="700" fill="#ECE7DA" text-anchor="middle">FINE</text></svg>
+      <span class="avatar-code">BURN-T</span>
+      <span class="avatar-name">The High-Functioning Meltdown</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7ba84c" opacity="0.2"/><circle cx="100" cy="85" r="35" fill="#1a2a10" stroke="#ECE7DA" stroke-width="2"/><path d="M65 65 Q75 40 100 40 Q125 40 135 65 L130 85 Q125 70 100 70 Q75 70 70 85 Z" fill="#7ba84c" stroke="#ECE7DA" stroke-width="2"/><path d="M83 87 Q88 82 93 87" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M107 87 Q112 82 117 87" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M88 105 Q100 110 112 105" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="60" y="130" width="80" height="50" rx="4" fill="#1a1a1a" stroke="#ECE7DA" stroke-width="2"/><rect x="68" y="138" width="20" height="15" rx="1" fill="#e85a3c"/><rect x="92" y="138" width="20" height="15" rx="1" fill="#7d6cc4"/><rect x="116" y="138" width="16" height="15" rx="1" fill="#7ba84c"/><rect x="68" y="158" width="16" height="15" rx="1" fill="#4a7ccc"/><rect x="88" y="158" width="24" height="15" rx="1" fill="#c8a16a"/><rect x="116" y="158" width="16" height="15" rx="1" fill="#4FD8CB"/></svg>
+      <span class="avatar-code">VIBE-S</span>
+      <span class="avatar-name">The Mood Board Grinder</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#4FD8CB" opacity="0.12"/><circle cx="100" cy="85" r="35" fill="#0e2420" stroke="#ECE7DA" stroke-width="2"/><path d="M68 70 Q72 45 100 45 Q128 45 132 70" stroke="#ECE7DA" stroke-width="2" fill="#0e2420"/><circle cx="88" cy="88" r="3" fill="#ECE7DA"/><circle cx="112" cy="88" r="3" fill="#ECE7DA"/><line x1="80" y1="83" x2="92" y2="83" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round"/><line x1="108" y1="83" x2="120" y2="83" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round"/><line x1="88" y1="108" x2="112" y2="108" stroke="#ECE7DA" stroke-width="2.5" stroke-linecap="round"/><rect x="60" y="125" width="80" height="55" rx="6" fill="#4FD8CB" stroke="#ECE7DA" stroke-width="2"/><text x="100" y="160" font-family="Inter" font-size="11" font-weight="700" fill="#06302b" text-anchor="middle">SOLO</text></svg>
+      <span class="avatar-code">SOLO-X</span>
+      <span class="avatar-name">The Lone Wolf</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#e85a3c" opacity="0.2"/><circle cx="100" cy="85" r="35" fill="#2a1209" stroke="#ECE7DA" stroke-width="2"/><path d="M65 65 Q75 40 100 40 Q125 40 135 65" stroke="#ECE7DA" stroke-width="2" fill="#2a1209"/><ellipse cx="88" cy="85" rx="5" ry="6" fill="#ECE7DA"/><circle cx="89" cy="83" r="1.5" fill="#1a0a04"/><ellipse cx="112" cy="85" rx="5" ry="6" fill="#ECE7DA"/><circle cx="113" cy="83" r="1.5" fill="#1a0a04"/><ellipse cx="100" cy="110" rx="12" ry="6" fill="#e85a3c"/><path d="M88 110 Q100 105 112 110" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="50" y="130" width="20" height="20" rx="2" fill="#4a7ccc" stroke="#ECE7DA" stroke-width="1.5"/><rect x="75" y="130" width="20" height="20" rx="2" fill="#7d6cc4" stroke="#ECE7DA" stroke-width="1.5"/><rect x="100" y="130" width="20" height="20" rx="2" fill="#7ba84c" stroke="#ECE7DA" stroke-width="1.5"/><rect x="125" y="130" width="20" height="20" rx="2" fill="#e85a3c" stroke="#ECE7DA" stroke-width="1.5"/><rect x="62" y="155" width="20" height="20" rx="2" fill="#4FD8CB" stroke="#ECE7DA" stroke-width="1.5"/><rect x="87" y="155" width="20" height="20" rx="2" fill="#c8a16a" stroke="#ECE7DA" stroke-width="1.5"/><rect x="112" y="155" width="20" height="20" rx="2" fill="#7d6cc4" stroke="#ECE7DA" stroke-width="1.5"/></svg>
+      <span class="avatar-code">FOMO-R</span>
+      <span class="avatar-name">The Opportunity Hoarder</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7d6cc4" opacity="0.2"/><circle cx="100" cy="80" r="32" fill="#1a1230" stroke="#ECE7DA" stroke-width="2"/><path d="M70 65 Q75 42 100 42 Q125 42 130 65" stroke="#ECE7DA" stroke-width="2" fill="#1a1230"/><circle cx="90" cy="83" r="2.5" fill="#ECE7DA"/><circle cx="110" cy="83" r="2.5" fill="#ECE7DA"/><path d="M86 100 Q100 110 114 100" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="50" y="125" width="100" height="60" rx="4" fill="#0e201b" stroke="#ECE7DA" stroke-width="2"/><rect x="60" y="135" width="80" height="5" rx="1" fill="#7d6cc4"/><rect x="60" y="145" width="60" height="3" rx="1" fill="#ECE7DA" opacity="0.3"/><rect x="60" y="153" width="70" height="3" rx="1" fill="#ECE7DA" opacity="0.3"/><rect x="60" y="161" width="50" height="3" rx="1" fill="#ECE7DA" opacity="0.3"/><polyline points="60,175 75,168 90,172 105,165 120,170 135,160" stroke="#7d6cc4" stroke-width="2" fill="none"/></svg>
+      <span class="avatar-code">DECK-R</span>
+      <span class="avatar-name">The Professional Talker</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#4a7ccc" opacity="0.2"/><circle cx="100" cy="80" r="32" fill="#0e1e35" stroke="#ECE7DA" stroke-width="2"/><path d="M68 70 Q75 45 100 45 Q125 45 132 70" stroke="#ECE7DA" stroke-width="2" fill="#0e1e35"/><circle cx="90" cy="82" r="6" fill="#1a2a45" stroke="#ECE7DA" stroke-width="1.5"/><circle cx="90" cy="82" r="2.5" fill="#ECE7DA"/><circle cx="110" cy="82" r="6" fill="#1a2a45" stroke="#ECE7DA" stroke-width="1.5"/><circle cx="110" cy="82" r="2.5" fill="#ECE7DA"/><path d="M88 102 Q100 106 112 102" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="50" y="130" width="40" height="50" rx="3" fill="#4a7ccc" stroke="#ECE7DA" stroke-width="1.5"/><rect x="65" y="120" width="40" height="50" rx="3" fill="#0e201b" stroke="#ECE7DA" stroke-width="1.5"/><rect x="80" y="125" width="40" height="50" rx="3" fill="#c8a16a" stroke="#ECE7DA" stroke-width="1.5"/><rect x="100" y="135" width="40" height="45" rx="3" fill="#7d6cc4" stroke="#ECE7DA" stroke-width="1.5"/></svg>
+      <span class="avatar-code">COPY-C</span>
+      <span class="avatar-name">The Professional Benchmarker</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7ba84c" opacity="0.2"/><circle cx="100" cy="85" r="35" fill="#1a2a10" stroke="#ECE7DA" stroke-width="2"/><path d="M68 72 Q72 48 100 48 Q128 48 132 72" stroke="#ECE7DA" stroke-width="2" fill="#1a2a10"/><path d="M82 87 Q86 82 90 87" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M110 87 Q114 82 118 87" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M80 105 Q100 118 120 105" stroke="#ECE7DA" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle cx="75" cy="98" r="4" fill="#e85a3c" opacity="0.6"/><circle cx="125" cy="98" r="4" fill="#e85a3c" opacity="0.6"/><rect x="60" y="130" width="80" height="50" rx="4" fill="#7ba84c" stroke="#ECE7DA" stroke-width="2"/><text x="100" y="162" font-family="Inter" font-size="14" font-weight="700" fill="#ECE7DA" text-anchor="middle">YES!</text></svg>
+      <span class="avatar-code">NICE-R</span>
+      <span class="avatar-name">The Yes-Person</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#4a7ccc" opacity="0.2"/><circle cx="100" cy="80" r="32" fill="#0e1e35" stroke="#ECE7DA" stroke-width="2"/><path d="M70 65 Q75 42 100 42 Q125 42 130 65" stroke="#ECE7DA" stroke-width="2" fill="#0e1e35"/><rect x="80" y="73" width="14" height="11" rx="2" fill="none" stroke="#ECE7DA" stroke-width="1.5"/><rect x="106" y="73" width="14" height="11" rx="2" fill="none" stroke="#ECE7DA" stroke-width="1.5"/><line x1="94" y1="78" x2="106" y2="78" stroke="#ECE7DA" stroke-width="1.5"/><circle cx="87" cy="78" r="1.5" fill="#ECE7DA"/><circle cx="113" cy="78" r="1.5" fill="#ECE7DA"/><path d="M88 100 Q100 106 112 100" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" fill="none"/><rect x="55" y="125" width="90" height="55" rx="4" fill="#4a7ccc" stroke="#ECE7DA" stroke-width="2"/><line x1="65" y1="165" x2="70" y2="155" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><line x1="78" y1="165" x2="78" y2="148" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><line x1="91" y1="165" x2="86" y2="140" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><line x1="104" y1="165" x2="98" y2="145" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><line x1="117" y1="165" x2="110" y2="138" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/><line x1="130" y1="165" x2="125" y2="135" stroke="#ECE7DA" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="avatar-code">DATA-K</span>
+      <span class="avatar-name">The Analysis Paralysis</span>
+    </div>
+    <div class="avatar-card" onclick="startQuiz()">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="100" cy="185" rx="50" ry="5" fill="#7d6cc4" opacity="0.2"/><circle cx="100" cy="85" r="35" fill="#1a1230" stroke="#ECE7DA" stroke-width="2" opacity="0.7"/><path d="M68 70 Q72 47 100 47 Q128 47 132 70" stroke="#ECE7DA" stroke-width="2" fill="#1a1230" opacity="0.7"/><circle cx="88" cy="88" r="3" fill="#ECE7DA" opacity="0.6"/><circle cx="112" cy="88" r="3" fill="#ECE7DA" opacity="0.6"/><line x1="80" y1="83" x2="92" y2="83" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" opacity="0.6"/><line x1="108" y1="83" x2="120" y2="83" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" opacity="0.6"/><line x1="90" y1="110" x2="110" y2="110" stroke="#ECE7DA" stroke-width="2" stroke-linecap="round" opacity="0.6"/><circle cx="170" cy="45" r="14" fill="#1e1530" stroke="#7d6cc4" stroke-width="2" stroke-dasharray="3 3"/><text x="170" y="50" font-family="Inter" font-size="11" font-weight="600" fill="#7d6cc4" text-anchor="middle">?</text><rect x="65" y="130" width="70" height="45" rx="4" fill="#7d6cc4" stroke="#ECE7DA" stroke-width="2" opacity="0.8"/><text x="100" y="158" font-family="Inter" font-size="10" font-weight="700" fill="#ECE7DA" text-anchor="middle">PRESENT</text></svg>
+      <span class="avatar-code">WHER-R</span>
+      <span class="avatar-name">The Present Absentee</span>
+    </div>
   </div>
 </div>
 
@@ -211,7 +297,7 @@ footer a:hover{color:var(--teal)}
 </footer>
 
 <script>
-const SHEETS_URL="https://script.google.com/macros/s/AKfycbzMo61aJI_3RVKfDLzXTYmRduojKKPAVgGfVyYJJB6kafcguQi6uPD2c43RBoMuGn2c/exec";
+https://script.google.com/a/macros/cruma.ai/library/d/1fbXCf9DCjnWD9nYLgrI5aVgK7ybXP7traE9w3Gg2BOvXCDbm8f0Wl2lo/4
 
 const Qs=[
   {t:"Bestie it's Monday at 9am. Your inbox has 47 unreads. Whatcha doing?",opts:[
@@ -221,7 +307,7 @@ const Qs=[
     {t:"Staring at it for 20 minutes praying someone else handles it",v:"ghost"}
   ]},
   {t:"How would you actually want AI to slide into your workflow?",opts:[
-    {t:"Reply to my emails pretending to be me. Nobody finds out. Plot twist.",v:"deck"},
+    {t:"Reply to my emails pretending to be me. Nobody finds out. Plot twist.",v:"burn"},
     {t:"Drop a morning brief so I know what's coming. Like a butler but digital.",v:"data"},
     {t:"Do the thinking, I'll do the approving. CEO mode.",v:"ctrl"},
     {t:"Bestie I do not trust the robots. I'll do it myself thx",v:"solo"}
@@ -230,7 +316,7 @@ const Qs=[
     {t:"It moves to tomorrow every single day. Tomorrow never comes.",v:"sleep"},
     {t:"Added 3 sub-tasks. They're also undone. The list grew.",v:"grid"},
     {t:"Did it at 11:47pm on a Sunday crying slightly",v:"burn"},
-    {t:"Delegated it. They also haven't done it. We don't talk about it.",v:"copy"}
+    {t:"Delegated it. They also haven't done it. We don't talk about it.",v:"ctrl"}
   ]},
   {t:"Define a productive day for you no lies:",opts:[
     {t:"Inbox cleared, follow-ups sent, no balls dropped. Chef's kiss.",v:"load"},
@@ -239,7 +325,7 @@ const Qs=[
     {t:"Made tomorrow's list so good it counts as today's work right?",v:"grid"}
   ]},
   {t:"Someone sends you a 400-word email. The vibe?",opts:[
-    {t:"Read every word. Reply with 600. Anxiety is my love language.",v:"nice"},
+    {t:"Read every word. Reply with 600. Anxiety is my love language.",v:"load"},
     {t:"Skimmed it, missed the actual ask, replied to the wrong part",v:"wher"},
     {t:"Forwarded with 'thoughts?' and made it someone else's problem",v:"ctrl"},
     {t:"Opened it. Felt tired. Closed it. Repeat for 4 days. We've been here.",v:"ghost"}
@@ -253,7 +339,7 @@ const Qs=[
   {t:"This meeting could have been an email. Your move?",opts:[
     {t:"Say nothing. Attend. Suffer in silence like a real one.",v:"nice"},
     {t:"Reschedule it three times then attend reluctantly",v:"sleep"},
-    {t:"Turn it into an email unilaterally. No regrets. No texts.",v:"deck"},
+    {t:"Turn it into an email unilaterally. No regrets. No texts.",v:"solo"},
     {t:"Add three more people for absolutely no reason. Energy.",v:"ping"}
   ]},
   {t:"Your notes app is giving:",opts:[
@@ -264,21 +350,21 @@ const Qs=[
   ]},
   {t:"When AI writes something for you, what's the move?",opts:[
     {t:"Post it immediately. Looks fine. Cannot be stopped.",v:"vibe"},
-    {t:"Edit every word until it sounds like me, defeating the entire purpose",v:"copy"},
+    {t:"Edit every word until it sounds like me, defeating the entire purpose",v:"ctrl"},
     {t:"Feel weirdly guilty. Add a disclaimer nobody asked for.",v:"nice"},
     {t:"Refuse on principle. Spend 4 hours writing it myself. Suffer.",v:"solo"}
   ]},
   {t:"A colleague asks you to review something. Your timeline:",opts:[
     {t:"Done immediately. Thoroughly. Probably overengineered.",v:"load"},
     {t:"Said yes. Forgot. Remembered at midnight. Did it at 1am.",v:"burn"},
-    {t:"Gave feedback so detailed it's basically my document now",v:"deck"},
+    {t:"Gave feedback so detailed it's basically my document now",v:"ctrl"},
     {t:"Said 'looks good!' having read zero words. Trust the vibes.",v:"wher"}
   ]},
   {t:"Follow-ups. How.",opts:[
     {t:"I have a system. The system is anxiety. It works.",v:"load"},
     {t:"Follow up once then leave it to the universe to decide",v:"ghost"},
     {t:"Automated. Fire and forget. I do not think about it.",v:"data"},
-    {t:"Drafted the follow-up. Never sent it. Drafts folder is full.",v:"sleep"}
+    {t:"Drafted the follow-up. Never sent it. Drafts folder is full.",v:"ghost"}
   ]},
   {t:"Your relationship with your calendar is:",opts:[
     {t:"Sacred. Nothing moves without my approval. I am the gatekeeper.",v:"ctrl"},
@@ -299,20 +385,20 @@ const Qs=[
     {t:"Open laptop. Stare. Close laptop. Open laptop. Repeat.",v:"wher"}
   ]},
   {t:"Someone says 'can't AI just do that for you?' Your honest reaction:",opts:[
-    {t:"Yes and I need to figure that out yesterday",v:"copy"},
-    {t:"Maybe? Where do I even start though. Anyone got a tutorial.",v:"nice"},
-    {t:"Tried ChatGPT once. It was wrong. Now I'm scarred forever.",v:"deck"},
+    {t:"Yes and I need to figure that out yesterday",v:"data"},
+    {t:"Maybe? Where do I even start though. Anyone got a tutorial.",v:"copy"},
+    {t:"Tried ChatGPT once. It was wrong. Now I'm scarred forever.",v:"ctrl"},
     {t:"I genuinely enjoy doing it manually it gives me control issues",v:"solo"}
   ]},
   {t:"Your biggest work fear is:",opts:[
-    {t:"Something important slipping through the cracks while I sleep",v:"ghost"},
+    {t:"Something important slipping through the cracks while I sleep",v:"load"},
     {t:"Getting replaced by a system I don't even understand",v:"solo"},
     {t:"Running out of things to personally micromanage",v:"ctrl"},
     {t:"Realising I've been the bottleneck this whole time. Spiral.",v:"burn"}
   ]},
   {t:"How do you feel about something acting on your behalf?",opts:[
     {t:"Love it. Just show me the outcome. Trust the process.",v:"vibe"},
-    {t:"Fine for small stuff. I want eyes on anything real.",v:"ping"},
+    {t:"Fine for small stuff. I want eyes on anything real.",v:"data"},
     {t:"Deeply uncomfy. What if it gets the tone wrong. Spiraling.",v:"ctrl"},
     {t:"Absolutely not. My name is on everything. Trust no one.",v:"solo"}
   ]},
@@ -324,14 +410,14 @@ const Qs=[
   ]},
   {t:"A tool says it'll 'save you 10 hours a week.' You:",opts:[
     {t:"Sign up immediately. Use it for two days. Forget about it.",v:"fomo"},
-    {t:"Calculate exactly which 10 hours and get excited",v:"deck"},
+    {t:"Calculate exactly which 10 hours and get excited",v:"data"},
     {t:"Wonder who those 10 hours are being saved for because it's not me",v:"burn"},
     {t:"Add it to a list of tools to evaluate properly one day. Soon.",v:"sleep"}
   ]},
   {t:"AI can now do your most hated task. Your reaction:",opts:[
     {t:"Tears of relief. When can it start. Today? Today.",v:"burn"},
-    {t:"Suspicious. What's the catch. There's always a catch.",v:"copy"},
-    {t:"Protective. That task is mine even if I hate it. Stockholm.",v:"ping"},
+    {t:"Suspicious. What's the catch. There's always a catch.",v:"ctrl"},
+    {t:"Protective. That task is mine even if I hate it. Stockholm.",v:"solo"},
     {t:"I already outsourced it. To someone who also hates it.",v:"nice"}
   ]},
   {t:"Deadlines? Explain.",opts:[
@@ -348,14 +434,14 @@ const Qs=[
   ]},
   {t:"Someone offers to take a recurring task off your plate forever:",opts:[
     {t:"YES before they finish the sentence. Yes. Yes. Yes.",v:"burn"},
-    {t:"9 clarifying questions then yes. Process is everything.",v:"deck"},
+    {t:"9 clarifying questions then yes. Process is everything.",v:"data"},
     {t:"Yes. Then check in every day anyway. Trust issues.",v:"ctrl"},
-    {t:"Politely decline. I've built my identity around this task. RIP.",v:"vibe"}
+    {t:"Politely decline. I've built my identity around this task. RIP.",v:"solo"}
   ]},
   {t:"Your real relationship with AI tools rn:",opts:[
     {t:"Early adopter. Using 6 of them. They all kind of overlap.",v:"fomo"},
     {t:"Curious but haven't committed. The fear is real.",v:"copy"},
-    {t:"One bad experience and now I'm a cynic. Won't go back.",v:"ping"},
+    {t:"One bad experience and now I'm a cynic. Won't go back.",v:"ctrl"},
     {t:"Waiting for it to mature. My position since 2022 btw.",v:"sleep"}
   ]},
   {t:"Something goes wrong at work. First move?",opts:[
@@ -366,7 +452,7 @@ const Qs=[
   ]},
   {t:"Your inbox zero strategy:",opts:[
     {t:"Ruthless archive. Unsubscribe everything. Zero tolerance.",v:"load"},
-    {t:"Declare email bankruptcy every six months and start fresh",v:"ghost"},
+    {t:"Declare email bankruptcy every six months and start fresh",v:"fire"},
     {t:"Move emails into folders. Never look at the folders. Iconic.",v:"grid"},
     {t:"Inbox zero is a lie told by people with easy jobs",v:"burn"}
   ]},
@@ -374,12 +460,12 @@ const Qs=[
     {t:"Set the guardrails and let it cook. Send tweet.",v:"data"},
     {t:"Fine for low stakes. Eyes on anything real though.",v:"vibe"},
     {t:"I want to see every step and approve every move. Surveillance state.",v:"ctrl"},
-    {t:"Hard no. I'm the one explaining it when it goes wrong.",v:"nice"}
+    {t:"Hard no. I'm the one explaining it when it goes wrong.",v:"solo"}
   ]},
   {t:"A new AI tool goes viral. You:",opts:[
     {t:"Already been using it for two weeks. Catching up bestie.",v:"fomo"},
     {t:"Sign up. Explore for an hour. Never open it again.",v:"copy"},
-    {t:"Read the reviews. Wait to see if it's actually real. Skeptic.",v:"deck"},
+    {t:"Read the reviews. Wait to see if it's actually real. Skeptic.",v:"data"},
     {t:"See the tweet. Feel overwhelmed. Close the app. Lie down.",v:"wher"}
   ]},
   {t:"The truest thing anyone's ever said about how you work:",opts:[
@@ -389,12 +475,13 @@ const Qs=[
     {t:"'I don't know how you do it' (neither do I, honestly)",v:"burn"}
   ]},
   {t:"If your work style had a last text it would be:",opts:[
-    {t:"'On it' sent at 11:54pm",v:"deck"},
-    {t:"'Just following up on my follow-up'",v:"data"},
+    {t:"'On it' sent at 11:54pm",v:"load"},
+    {t:"'Just following up on my follow-up'",v:"ghost"},
     {t:"'Can we push this — just need another day'",v:"sleep"},
-    {t:"'lol yeah totally fine' (not fine. very not fine.)",v:"vibe"}
+    {t:"'lol yeah totally fine' (not fine. very not fine.)",v:"burn"}
   ]}
 ];
+
 const Types={
   load:{code:"LOAD-R",name:"The Pack Mule",color:"#1d6e62",autoScore:20,
     tagline:"Carries everything. Tells no one. Then wonders why they're tired.",
@@ -728,7 +815,7 @@ function pick(i,v){
 }
 function showResult(){
   const counts={};answers.forEach(a=>counts[a]=(counts[a]||0)+1);
-  const tk=Object.entries(counts).sort((a,b)=>{if(b[1]!==a[1])return b[1]-a[1];return answers.indexOf(a[0])-answers.indexOf(b[0]);})[0][0];
+  const tk=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0][0];
   const T=Types[tk]||Types.burn;
   document.getElementById('quiz').classList.remove('active');
   const rw=document.getElementById('result');rw.classList.add('active');
@@ -764,7 +851,7 @@ function showResult(){
         <div class="share-from">Cruma · Grinder Type Test</div>
         <div class="share-big">${T.name}</div>
         <div class="share-small">"${T.tagline}"</div>
-        <div class="share-url">cruma.ai/grinder_test</div>
+        <div class="share-url">cruma.ai/test</div>
       </div>
       <div class="share-btns">
         <button class="share-btn" onclick="shareX('${esc(T.code)}','${esc(T.name)}','${esc(T.tagline)}')">
